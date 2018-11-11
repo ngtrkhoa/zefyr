@@ -250,16 +250,16 @@ class ZefyrToolbarState extends State<ZefyrToolbar>
 
   List<Widget> _buildButtons(BuildContext context) {
     final buttons = <Widget>[
-      buildButton(context, ZefyrToolbarAction.bold),
-      buildButton(context, ZefyrToolbarAction.italic),
-      LinkButton(),
       HeadingButton(),
       buildButton(context, ZefyrToolbarAction.bulletList),
       buildButton(context, ZefyrToolbarAction.numberList),
-      buildButton(context, ZefyrToolbarAction.quote),
-      buildButton(context, ZefyrToolbarAction.code),
-      buildButton(context, ZefyrToolbarAction.horizontalRule),
       ImageButton(),
+      // buildButton(context, ZefyrToolbarAction.bold),
+      // buildButton(context, ZefyrToolbarAction.italic),
+      // LinkButton(),
+      // buildButton(context, ZefyrToolbarAction.quote),
+      // buildButton(context, ZefyrToolbarAction.code),
+      buildButton(context, ZefyrToolbarAction.horizontalRule),
     ];
     return buttons;
   }
