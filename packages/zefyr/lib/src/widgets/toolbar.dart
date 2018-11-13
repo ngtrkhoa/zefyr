@@ -259,7 +259,7 @@ class ZefyrToolbarState extends State<ZefyrToolbar>
       // LinkButton(),
       // buildButton(context, ZefyrToolbarAction.quote),
       // buildButton(context, ZefyrToolbarAction.code),
-      buildButton(context, ZefyrToolbarAction.horizontalRule),
+      // buildButton(context, ZefyrToolbarAction.horizontalRule),
     ];
     return buttons;
   }
@@ -275,29 +275,23 @@ class ZefyrButtonList extends StatefulWidget {
 }
 
 class _ZefyrButtonListState extends State<ZefyrButtonList> {
-  final ScrollController _controller = new ScrollController();
+//  final ScrollController _controller = new ScrollController();
   bool _showLeftArrow = false;
   bool _showRightArrow = false;
 
   @override
   void initState() {
     super.initState();
-    _controller.addListener(_handleScroll);
-    // Workaround to allow scroll controller attach to our ListView so that
-    // we can detect if overflow arrows need to be shown on init.
-    // TODO: find a better way to detect overflow
-    Timer.run(_handleScroll);
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = ZefyrTheme.of(context).toolbarTheme;
     final color = theme.iconColor;
-    final list = ListView(
-      scrollDirection: Axis.horizontal,
-      controller: _controller,
+    final list = Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: widget.buttons,
-      physics: ClampingScrollPhysics(),
     );
 
     final leftArrow = _showLeftArrow
@@ -313,7 +307,7 @@ class _ZefyrButtonListState extends State<ZefyrButtonList> {
           height: ZefyrToolbar.kToolbarHeight,
           child: Container(child: leftArrow, color: theme.color),
         ),
-        Expanded(child: ClipRect(child: list)),
+        Expanded(child: list),
         SizedBox(
           width: 12.0,
           height: ZefyrToolbar.kToolbarHeight,
@@ -321,15 +315,6 @@ class _ZefyrButtonListState extends State<ZefyrButtonList> {
         ),
       ],
     );
-  }
-
-  void _handleScroll() {
-    setState(() {
-      _showLeftArrow =
-          _controller.position.minScrollExtent != _controller.position.pixels;
-      _showRightArrow =
-          _controller.position.maxScrollExtent != _controller.position.pixels;
-    });
   }
 }
 
