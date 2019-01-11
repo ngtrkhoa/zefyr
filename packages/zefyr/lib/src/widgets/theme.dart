@@ -71,7 +71,7 @@ class ZefyrThemeData {
       fontSize: 16.0,
       height: 1.25,
       fontWeight: FontWeight.normal,
-      color: Colors.grey.shade800,
+      // color: Colors.grey.shade800,
     );
     final padding = const EdgeInsets.only(bottom: 16.0);
     final boldStyle = new TextStyle(fontWeight: FontWeight.bold);
@@ -168,7 +168,7 @@ class HeadingTheme {
       level1: StyleTheme(
         textStyle: TextStyle(
           fontSize: 30.0,
-          color: Colors.grey.shade800,
+          // color: Colors.grey.shade800,
           height: 1.25,
           fontWeight: FontWeight.w600,
         ),
@@ -177,7 +177,7 @@ class HeadingTheme {
       level2: StyleTheme(
         textStyle: TextStyle(
           fontSize: 24.0,
-          color: Colors.grey.shade800,
+          // color: Colors.grey.shade800,
           height: 1.25,
           fontWeight: FontWeight.w600,
         ),
@@ -186,7 +186,7 @@ class HeadingTheme {
       level3: StyleTheme(
         textStyle: TextStyle(
           fontSize: 20.0,
-          color: Colors.grey.shade800,
+          // color: Colors.grey.shade800,
           height: 1.25,
           fontWeight: FontWeight.w600,
         ),
