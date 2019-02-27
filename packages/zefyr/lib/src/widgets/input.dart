@@ -40,7 +40,7 @@ class InputConnectionController implements TextInputClient {
         new TextInputConfiguration(
           inputType: TextInputType.multiline,
           obscureText: false,
-          autocorrect: true,
+          autocorrect: false,
           inputAction: TextInputAction.newline,
           textCapitalization: TextCapitalization.sentences,
         ),
